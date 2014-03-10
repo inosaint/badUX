@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<!-- https://stackoverflow.com/questions/7966329/document-getelementbyid-not-working-in-mozila -->
+<!-- https://stackoverflow.com/questions/1527803/generating-random-numbers-in-javascript-in-a-specific-range -->
+
+<html>
+<head>
+	<title>Bad UX</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="js/tabletop.js"></script>
+
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css">
+	
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<style type="text/css">
+			body{
+				background-color:white;
+				text-align: center;
+				font-family: Helvetica,Arial,sans-serif;
+			}
+
+			header{
+				padding-top: 50px;
+			}
+
+			section{
+				padding-bottom: 50px;
+			}
+			h1{
+				font-size: 6em;
+				color: #333;
+			}
+			a{
+				color:#333;
+			}	
+			span{
+				font-family: serif;
+			}
+				</style>
+</head>
+<body class="container">
+
+
+ <script type="text/javascript">
+	var statejson = new Array();
+	var res;
+	var number = 0;
+
+				/**
+				 * Returns a random integer between min and max
+				 * Using Math.round() will give you a non-uniform distribution!
+				 */
+				function getRandomInt (min, max) {
+				    return Math.floor(Math.random() * (max - min + 1)) + min;
+				};
+
+				//function called once tabletop.js completes spreadsheet load
+    		function getStateInfo(data) {
+
+    				//jquery function which will make a json out of the spreadsheet data
+    	      $.each(data.Sheet1.elements, function(key, data) {
+    	        		 var state_data =	{ 'reason' : data.reason }
+
+            	statejson.push(state_data);
+    	         });
+
+    	      shuffle();
+
+    	      		
+
+    	      //console.log("Statejson L", statejson.length);
+    	      //console.log("Statejson", statejson[0].reason);
+    	      
+    	      
+				};
+
+				function shuffle(){
+						var next = getRandomInt (0, statejson.length - 1);
+						console.log(next);
+						while(next == number){
+							next = getRandomInt (0, statejson.length - 1);
+						}
+						number = next;
+						res = statejson[number].reason; // set limits
+    	      document.getElementById('reason').textContent = res; 
+
+    	      console.log(number);
+				};
+ 
+     $(document).ready(function(){
+        
+        Tabletop.init( {
+        	key: "0Ap2hoxVM_haNdE5TelJnRTM0R0padmJLY1ZSSHRJNmc",  //link that is part of the published sheet url      
+        	callback: getStateInfo,        
+        	simpleSheet: false 
+        } );
+
+
+                   
+    });
+
+        
+        
+
+ </script>
+
+  <header class="row">
+      <span>101 ways to design the worst User Experience - A fine place to learn how not to do it.</span>
+  </header>
+	
+
+	<section>
+ 	
+ 	<h1><div id='reason'></div></h1>
+ 	
+ 	</section>
+
+	<button onclick="shuffle()">Shuffle</button>
+
+
+
+</body>
+</html>
