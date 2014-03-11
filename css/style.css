@@ -1,0 +1,56 @@
+<style type="text/css">
+			body{
+				background-color:#6f5499;
+				text-align: center;
+				font-family: Helvetica,Arial,sans-serif;
+			}
+
+			header{
+				padding-top: 50px;
+			}
+			footer{
+				padding-top:40px;
+			}
+
+			section{
+				padding-bottom: 50px;
+				padding-top: 30px;
+				height:300px;
+			}
+			h1{
+				font-size: 6em;
+				line-height:1;
+				color: #fff;
+				
+			}
+			a{
+				color:#fff;
+			}	
+			a:hover{
+				color:#fcfcfc;
+			}
+			span{
+				color:#fff;
+			}
+			
+			.btn-outline-inverse{
+				color: #563d7c;
+					background-color: transparent;
+					border-color: #563d7c;
+			}
+		
+			.btn-outline-inverse:hover{
+					color: #fff;
+					background-color: transparent;
+					border-color: #cdbfe3;
+			}
+			
+			ul li{
+				list-style:none;
+				display:inline;
+			}
+			li{
+				padding-left:10px;
+			}
+			
+				</style>
