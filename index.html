@@ -48,6 +48,7 @@
 	var statejson = new Array();
 	var res,res2;
 	var number = 0;
+	var total;
 
 				/**
 				 * Returns a random integer between min and max
@@ -91,7 +92,8 @@
     	      
     	      if(res2 != null)
     	      document.getElementById('link').href="http://twitter.com/"+res2;
-
+    	      total = statejson.length - 1;
+		document.getElementById('total').textContent = total;
     	      console.log(number);
     	       console.log(res2);
 				};
@@ -114,14 +116,14 @@
  </script>
 
   <header class="row">
-      <span>101 ways to design the worst User Experience - A fine place to learn how not to do it.</span>
+      <span><span id="total"></span> ways to design the worst User Experience - A fine place to learn how not to do it.</span>
   </header>
 	
 
 	<section>
  	
  	<h1><div id='reason'></div></h1>
- 	<div>~ <a href="" id='link' target='_blank'><span id='twitter'></span></a></div>
+ 	<div><a href="" id='link' target='_blank'><span id='twitter'></span></a></div>
  	
  	</section>
 
