@@ -45,7 +45,7 @@
 
  <script type="text/javascript">
 	var statejson = new Array();
-	var res;
+	var res,res2;
 	var number = 0;
 
 				/**
@@ -61,7 +61,7 @@
 
     				//jquery function which will make a json out of the spreadsheet data
     	      $.each(data.Sheet1.elements, function(key, data) {
-    	        		 var state_data =	{ 'reason' : data.reason }
+    	        		 var state_data =	{ 'reason' : data.reason , 'twitter':data.Twitter}
 
             	statejson.push(state_data);
     	         });
@@ -83,8 +83,10 @@
 							next = getRandomInt (0, statejson.length - 1);
 						}
 						number = next;
-						res = statejson[number].reason; // set limits
+						res = statejson[number].reason;
+						res2 = statejson[number].twitter;// set limits
     	      document.getElementById('reason').textContent = res; 
+    	      document.getElementById('twitter').textContent = res2; 
 
     	      console.log(number);
 				};
@@ -114,6 +116,7 @@
 	<section>
  	
  	<h1><div id='reason'></div></h1>
+ 	<div>By <span id='twitter'></span></div>
  	
  	</section>
 
