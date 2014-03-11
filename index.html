@@ -62,7 +62,7 @@
 
     				//jquery function which will make a json out of the spreadsheet data
     	      $.each(data.Sheet1.elements, function(key, data) {
-    	        		 var state_data =	{ 'reason' : data.reason , 'twitter':data.twitter}
+    	        		 var state_data = { 'reason' : data.reason , 'twitter':data.twitter}
 
             	statejson.push(state_data);
     	         });
@@ -90,6 +90,7 @@
     	      document.getElementById('twitter').textContent = res2; 
 
     	      console.log(number);
+    	       console.log(res2);
 				};
  
      $(document).ready(function(){
