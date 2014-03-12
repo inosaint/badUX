@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-
-<!-- https://stackoverflow.com/questions/7966329/document-getelementbyid-not-working-in-mozila -->
-<!-- https://stackoverflow.com/questions/1527803/generating-random-numbers-in-javascript-in-a-specific-range -->
-
-<html>
 <head>
-
+	<!-- not the prettiest codebase -->
+	
 	<title>Ways to design the worst UX</title>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 	<script src="js/tabletop.js"></script>
@@ -14,80 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css">
 	
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<style type="text/css">
-			body{
-				background-color:#6f5499;
-				text-align: center;
-				font-family: Helvetica,Arial,sans-serif;
-			}
 
-			header{
-				padding-top: 50px;
-			}
-			footer{
-				padding-top:40px;
-				height:200px;
-			}
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
-			section{
-				padding-bottom: 50px;
-				padding-top: 30px;
-				min-height:300px;
-			}
-			h1{
-				font-size: 1em;
-				line-height:1;
-				color: #fff;
-			}
-
-			.head{
-				font-size: 6em;
-				line-height:1;
-				color: #fff;
-				margin-bottom:30px;
-			}
-
-			a{
-				color:#fff;
-			}	
-			a:hover{
-				color:#fcfcfc;
-			}
-			span{
-				color:#fff;
-			}
-			
-			.btn-outline-inverse{
-				color: #563d7c;
-					background-color: transparent;
-					border-color: #563d7c;
-					margin-bottom:2em;
-			}
-		
-			.btn-outline-inverse:hover{
-					color: #fff;
-					background-color: transparent;
-					border-color: #cdbfe3;
-			}
-			
-			ul{
-				list-style:none;
-				padding-left:0px;
-			}
-			ul li{
-				list-style:none;
-				display:inline;
-			}
-			li{
-				padding-left:10px;
-			}
-			
-			.sticky{
-				position: fixed;
-				bottom: 0;
-			}
-			
-				</style>
 </head>
 <body class="container">
 
@@ -107,16 +32,16 @@
 				};
 
 				//function called once tabletop.js completes spreadsheet load
-    		function getStateInfo(data) {
+    				function getStateInfo(data) {
 
     				//jquery function which will make a json out of the spreadsheet data
-    	      $.each(data.Sheet1.elements, function(key, data) {
+    	      			$.each(data.Sheet1.elements, function(key, data) {
     	        		 var state_data = { 'reason' : data.reason , 'twitter':data.twitter}
 
-            	statejson.push(state_data);
-    	         });
+            			 statejson.push(state_data);
+    	         		});
 
-    	      shuffle();
+    	      			shuffle();
 
     	      		
 
@@ -128,31 +53,34 @@
 
 				function shuffle(){
 						var next = getRandomInt (0, statejson.length - 1);
-						console.log(next);
+						//console.log(next);
 						while(next == number){
 							next = getRandomInt (0, statejson.length - 1);
 						}
 						number = next;
 						res = statejson[number].reason;
 						res2 = statejson[number].twitter;// set limits
-    	      document.getElementById('reason').textContent = res; 
-    	      document.getElementById('twitter').textContent = res2;
+    	      					document.getElementById('reason').textContent = res; 
+    	      					document.getElementById('twitter').textContent = res2;
     	      
-    	      if(res2 != null)
-    	      document.getElementById('link').href="http://twitter.com/"+res2;
-    	      total = statejson.length;
-		document.getElementById('total').textContent = total;
-    	      console.log(number);
-    	       console.log(res2);
-				};
+				    	        if(res2 != null)
+				    	        document.getElementById('link').href="http://twitter.com/"+res2;
+				    	        total = statejson.length;
+						document.getElementById('total').textContent = total;
+    	      //console.log(number);
+    	       //console.log(res2);
+
+
+    	      					document.getElementById('tweet').href="https://twitter.com/intent/tweet?text="+res+"by @"+res2+"&via=worstUX&hashtags=worstUX&related=worstux,kenneth,notnarayan"; 
+						};
  
-     $(document).ready(function(){
-        
-        Tabletop.init( {
-        	key: "0Ap2hoxVM_haNdE5TelJnRTM0R0padmJLY1ZSSHRJNmc",  //link that is part of the published sheet url      
-        	callback: getStateInfo,        
-        	simpleSheet: false 
-        } );
+						$(document).ready(function(){
+					        
+					        Tabletop.init( {
+					        	key: "0Ap2hoxVM_haNdE5TelJnRTM0R0padmJLY1ZSSHRJNmc",  //link that is part of the published sheet url      
+					        	callback: getStateInfo,        
+					        	simpleSheet: false 
+					        } );
 
 
                    
@@ -172,28 +100,34 @@
 	<section class="row">
  	
  	
- 		<div class="head" id='reason'></div>
- 		<div>&mdash;<a href="" id='link' target='_blank'> <span id='twitter'></span></a></div>
- 	
+ 		<div class="head" >&#8220<span id='reason'></span>&#8221</div>
+ 		<div>&#8211; <a href="" id='link' target='_blank'><span id='twitter'></span></a></div>
+ 		
+
+ 		<ul>
+			<li>
+
+			<a id='tweet' target="_blank" href="" class="btn-tweet">Tweet this!</a> 
+
+			</li>
+		</ul>
+
  	</section>
+
 	<footer>
 		<a class="btn btn-outline-inverse btn-lg" onclick="shuffle()">One more please</a>
 		<ul>
-			<li><a href="/badUX/contribute.html" target="_blank">I know another way.</a></li>
+			<li><a href="/badUX/contribute.html" target="_blank">Do you know another way ?</a></li>
 			<li>Built and curated by <a href="http://twitter.com/kenneth" target="_blank">kenneth</a> and <a href="http://twitter.com/notnarayan" target="_blank">notnarayan</a></a></li>
 		</ul>
-		<ul>
-			<li>
-	<a href="https://twitter.com/share" class="twitter-share-button" data-url="worstuserexperience.com" data-text="learn to design the worstuserexperience.com" data-via="worstUX" data-count="none" data-hashtags="worstUX">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</li>
-		</ul>
+		
 	</footer>
 
 
 
 </body>
-	<script>
+
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -203,4 +137,6 @@
   ga('send', 'pageview');
 
 </script>
+
+	
 </html>
