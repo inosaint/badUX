@@ -1,4 +1,4 @@
-<style type="text/css">
+
 			body{
 				background-color:#6f5499;
 				text-align: center;
@@ -10,19 +10,27 @@
 			}
 			footer{
 				padding-top:40px;
+				height:200px;
 			}
 
 			section{
 				padding-bottom: 50px;
 				padding-top: 30px;
-				height:300px;
+				min-height:300px;
 			}
 			h1{
+				font-size: 1em;
+				line-height:1;
+				color: #fff;
+			}
+
+			.head{
 				font-size: 6em;
 				line-height:1;
 				color: #fff;
-				
+				margin-bottom:30px;
 			}
+
 			a{
 				color:#fff;
 			}	
@@ -37,6 +45,7 @@
 				color: #563d7c;
 					background-color: transparent;
 					border-color: #563d7c;
+					margin-bottom:2em;
 			}
 		
 			.btn-outline-inverse:hover{
@@ -45,6 +54,10 @@
 					border-color: #cdbfe3;
 			}
 			
+			ul{
+				list-style:none;
+				padding-left:0px;
+			}
 			ul li{
 				list-style:none;
 				display:inline;
@@ -53,4 +66,9 @@
 				padding-left:10px;
 			}
 			
-				</style>
+			#tweet{
+				background-color: #00aced;
+				padding:.4em;
+				text-decoration:none;
+			}
+			
