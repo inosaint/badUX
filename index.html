@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta property="og:site_name" content="WorstUserExperience"/>
 	<meta property="og:title" content="Worst ways to design UX"/>
-	
+
 	<title>Worst ways to design UX</title>
 
 
@@ -18,19 +18,19 @@
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 	<script src="js/tabletop.js"></script>
-	
-	
+
+
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/redmond/jquery-ui.css">
-	
+
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media='all'>
-	
+
 	<style>
 		html{
-			background-color: #6f5499;
-			}
+			background: #6f5499 url(http://amazingplac.es/images/1.jpg) no-repeat;
+			}t
 	</style>
 
 </head>
@@ -60,9 +60,16 @@
 
             			 statejson.push(state_data);
     	         		});
-    	         		
-    	         		shuffle();
 
+    	      			shuffle();
+
+    	      		
+
+    	      //console.log("Statejson L", statejson.length);
+    	      //console.log("Statejson", statejson[0].reason);
+    	      
+    	      
+				};
 
 				function shuffle(){
 						var next = getRandomInt (0, statejson.length - 1);
@@ -80,35 +87,35 @@
 				    	        document.getElementById('link').href="http://twitter.com/"+res2;
 				    	        total = statejson.length;
 						document.getElementById('total').textContent = total;
-    	      
-    	     
-						alert("http://amazingplac.es/images/" +number+ ".jpg");
-						
+    	      //console.log(number);
+    	       //console.log(res2);
 
 
     	      					document.getElementById('tweet').href="https://twitter.com/intent/tweet?text='"+res+"' by @"+res2+"&via=worstUX&hashtags=worstUX&related=worstux,kenneth,notnarayan"; 
 						};
  
 						$(document).ready(function(){
-							
-    	      					
-					        
+
 					        Tabletop.init( {
 					        	key: "0Ap2hoxVM_haNdE5TelJnRTM0R0padmJLY1ZSSHRJNmc",  //link that is part of the published sheet url      
 					        	callback: getStateInfo,        
 					        	simpleSheet: false 
 					        } );
+
+
                    
     });
 
         
-  </script>
+        
+
+ </script>
 
   <header class="row">
   <h1><a href="https://twitter.com/hashtag/worstux" target="_blank">#worstUX</a></h1>
       <span><span id="total"></span> ways to design the worst User Experience - A fine place to learn how not to do it.</span>
   </header>
-	
+
 
 	<section class="row">
  	
@@ -131,7 +138,7 @@
 			<li><a href="/badUX/contribute.html" target="_blank">Do you know another way ?</a></li>
 			<li>Built and curated by <a href="http://twitter.com/kenneth" target="_blank">kenneth</a> and <a href="http://twitter.com/notnarayan" target="_blank">notnarayan</a></a></li>
 		</ul>
-		
+
 	</footer>
 
 
@@ -150,5 +157,5 @@
 
 </script>
 
-	
+
 </html>
