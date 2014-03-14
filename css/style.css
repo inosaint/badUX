@@ -43,15 +43,15 @@
 			
 			.btn-outline-inverse{
 				color: #fff;
-					background-color: transparent;
-					border-color: #fff;
-					margin-bottom:2em;
+				background-color: transparent;
+				border-color: #fff;
+				margin-bottom:2em;
 			}
 		
 			.btn-outline-inverse:hover{
-					color: #fcfcfc;
-					background-color: transparent;
-					border-color: #fcfcfc;
+				color: #fcfcfc;
+				background-color: transparent;
+				border-color: #fcfcfc;
 			}
 			
 			ul{
