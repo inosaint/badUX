@@ -30,7 +30,7 @@
 	<style>
 		html{
 			background: #6f5499 url(http://amazingplac.es/images/1.jpg) no-repeat;
-			}t
+			}
 	</style>
 
 </head>
@@ -82,6 +82,7 @@
 				    	        total = statejson.length;
 						document.getElementById('total').textContent = total;
     	      alert(number);
+    	      $("html").css( "background-image", "http://amazingplac.es/images/"+number+".jpg");
 
 
     	      					document.getElementById('tweet').href="https://twitter.com/intent/tweet?text='"+res+"' by @"+res2+"&via=worstUX&hashtags=worstUX&related=worstux,kenneth,notnarayan"; 
