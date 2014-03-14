@@ -89,8 +89,10 @@
 						document.getElementById('total').textContent = total;
     	      //console.log(number);
     	       //console.log(res2);
-    	       $("html").css("background-image","url(http://amazingplac.es/images/" +number+ ".jpg");
-    	       alert("http://amazingplac.es/images/" +number+ ".jpg");
+    	       
+    	       var imgtext = "url(http://amazingplac.es/images/" +number+ ".jpg)";
+    	       $("html").css("background-image",imgtext);
+    	       alert(imgtext);
     	       
 
 
