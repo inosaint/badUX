@@ -42,16 +42,16 @@
 			}
 			
 			.btn-outline-inverse{
-				color: #563d7c;
+				color: #fff;
 					background-color: transparent;
-					border-color: #563d7c;
+					border-color: #fff;
 					margin-bottom:2em;
 			}
 		
 			.btn-outline-inverse:hover{
-					color: #fff;
+					color: #fcfcfc;
 					background-color: transparent;
-					border-color: #cdbfe3;
+					border-color: #fcfcfc;
 			}
 			
 			ul{
